@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/auth/login', { email, password });
+      const response = await axios.post('https://backend-54cz.onrender.com/api/v1/auth/login', { email, password });
       console.log('Login response:', response.data); // Log the response data
       const { token, ...user } = response.data; // Destructure user and token from response
   
@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/auth/register', userData);
+      const response = await axios.post('https://backend-54cz.onrender.com/api/v1/auth/register', userData);
       console.log('Register response:', response.data); // Log the response data
       const { token, ...user } = response.data; // Destructure user and token from response
 

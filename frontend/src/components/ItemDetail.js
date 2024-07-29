@@ -14,7 +14,7 @@ const ItemDetail = () => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/v1/items/${id}`, {
+        const response = await axios.get(`https://backend-54cz.onrender.com/api/v1/items/${id}`, {
           headers: { Authorization: ` ${auth.token}` }
         });
         setItem(response.data);
@@ -28,7 +28,7 @@ const ItemDetail = () => {
 
   const addComment = async () => {
     try {
-      await axios.post(`http://localhost:8080/api/v1/items/${id}/comment`, { comment }, {
+      await axios.post(`https://backend-54cz.onrender.com/api/v1/items/${id}/comment`, { comment }, {
         headers: { Authorization: ` ${auth.token}` }
       });
       setComment('');
@@ -40,7 +40,7 @@ const ItemDetail = () => {
 
   const addRating = async () => {
     try {
-      await axios.post(`http://localhost:8080/api/v1/items/${id}/rating`, { rating }, {
+      await axios.post(`https://backend-54cz.onrender.com/api/v1/items/${id}/rating`, { rating }, {
         headers: { Authorization: ` ${auth.token}` }
       });
       setRating('');

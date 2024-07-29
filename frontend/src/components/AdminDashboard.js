@@ -17,7 +17,7 @@ const AdminDashboard = () => {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/v1/items', {
+      const response = await axios.get('https://backend-54cz.onrender.com/api/v1/items', {
         headers: {
           Authorization: ` ${auth.token}` // Include the token in the request header
         }
@@ -49,13 +49,13 @@ const AdminDashboard = () => {
   const handleSave = async () => {
     try {
       if (selectedItem) {
-        await axios.put(`http://localhost:8080/api/v1/items/${selectedItem._id}`, newItem, {
+        await axios.put(`https://backend-54cz.onrender.com/api/v1/items/${selectedItem._id}`, newItem, {
           headers: {
             Authorization: ` ${auth.token}`
           }
         });
       } else {
-        await axios.post('http://localhost:8080/api/v1/items', newItem, {
+        await axios.post('https://backend-54cz.onrender.com/api/v1/items', newItem, {
           headers: {
             Authorization: ` ${auth.token}`
           }
@@ -70,7 +70,7 @@ const AdminDashboard = () => {
 
   const handleDelete = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:8080/api/v1/items/${itemId}`, {
+      await axios.delete(`https://backend-54cz.onrender.com/api/v1/items/${itemId}`, {
         headers: {
           Authorization: ` ${auth.token}`
         }
@@ -83,7 +83,7 @@ const AdminDashboard = () => {
 
   const handleAddComment = async (itemId, comment) => {
     try {
-      await axios.post(`http://localhost:8080/api/v1/items/${itemId}/comment`, { comment }, {
+      await axios.post(`https://backend-54cz.onrender.com/api/v1/items/${itemId}/comment`, { comment }, {
         headers: {
           Authorization: ` ${auth.token}`
         }
@@ -96,7 +96,7 @@ const AdminDashboard = () => {
 
   const handleAddRating = async (itemId, rating) => {
     try {
-      await axios.post(`http://localhost:8080/api/v1/items/${itemId}/rating`, { rating }, {
+      await axios.post(`https://backend-54cz.onrender.com/api/v1/items/${itemId}/rating`, { rating }, {
         headers: {
           Authorization: ` ${auth.token}`
         }

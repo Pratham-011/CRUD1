@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/v1/items');
+        const response = await axios.get('https://backend-54cz.onrender.com/api/v1/items');
         setItems(response.data);
         setLoading(false);
       } catch (error) {
@@ -31,7 +31,7 @@ const Home = () => {
     try {
       const token = localStorage.getItem('token'); // Adjust if you store the token differently
       await axios.post(
-        `http://localhost:8080/api/v1/items/${itemId}/comment`,
+        `https://backend-54cz.onrender.com/api/v1/items/${itemId}/comment`,
         { comment },
         {
           headers: {
@@ -50,7 +50,7 @@ const Home = () => {
     try {
       const token = localStorage.getItem('token'); // Adjust if you store the token differently
       await axios.post(
-        `http://localhost:8080/api/v1/items/${itemId}/rating`,
+        `https://backend-54cz.onrender.com/api/v1/items/${itemId}/rating`,
         { rating },
         {
           headers: {
