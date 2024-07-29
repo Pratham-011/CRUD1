@@ -17,8 +17,7 @@ app.use(express.json()); // Built-in JSON parsing middleware
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+
 })
   .then(() => console.log('MongoDB connected'))
   .catch((error) => console.log('MongoDB connection error:', error.message));
